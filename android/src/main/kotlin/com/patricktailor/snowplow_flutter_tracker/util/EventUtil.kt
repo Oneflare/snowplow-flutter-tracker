@@ -199,7 +199,7 @@ class EventUtil {
         }
 
         private fun getSelfDescribingJson(json: Map<String, Any>?): SelfDescribingJson {
-            val eventData = json?.get("eventData") as Map<String, Any>?
+            val eventData = json?.get("eventData") as Map<String, Any>? ?: json
             return SelfDescribingJson(eventData?.get("schema") as String, eventData["payload"] as Map<String, Any>)
         }
 
